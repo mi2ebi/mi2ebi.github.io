@@ -1,0 +1,289 @@
+/* TODO `@font-face` */
+
+:root {
+  /*
+  from modus-*-tinted 5.2.0
+  operandi: https://github.com/protesilaos/modus-themes/blob/main/modus-themes.el#L1129
+  vivendi:  https://github.com/protesilaos/modus-themes/blob/main/modus-themes.el#L2439
+  */
+
+  /* aligning things is fun!
+     (she says while not aligning most of the rest of her code) */
+  --bg-main:                   light-dark(#fbf7f0, #0d0e1c);
+  --bg-dim:                    light-dark(#efe9dd, #1d2235);
+  --fg-main:                   light-dark(#000000, #ffffff);
+  --fg-dim:                    light-dark(#595959, #989898);
+  --fg-alt:                    light-dark(#193668, #c6daff);
+  --bg-active:                 light-dark(#c9b9b0, #4a4f69);
+  --bg-inactive:               light-dark(#dfd5cf, #2b3045);
+  --border:                    light-dark(#9f9690, #61647a);
+
+  --red:                       light-dark(#a60000, #ff5f59);
+  --red-warmer:                light-dark(#972500, #ff6b55);
+  --red-cooler:                light-dark(#a0132f, #ff7f86);
+  --red-faint:                 light-dark(#7f0000, #ef8386);
+  --red-intense:               light-dark(#d00000, #ff5f5f);
+  --green:                     light-dark(#006300, #44bc44);
+  --green-warmer:              light-dark(#306010, #75c13e);
+  --green-cooler:              light-dark(#00603f, #11c777);
+  --green-faint:               light-dark(#2a5045, #88ca9f);
+  --green-intense:             light-dark(#008900, #44df44);
+  --yellow:                    light-dark(#6d5000, #d0bc00);
+  --yellow-warmer:             light-dark(#894000, #fec43f);
+  --yellow-cooler:             light-dark(#602938, #dfaf7a);
+  --yellow-faint:              light-dark(#574316, #d2b580);
+  --yellow-intense:            light-dark(#808000, #efef00);
+  --blue:                      light-dark(#0031a9, #2fafff);
+  --blue-warmer:               light-dark(#3546c2, #79a8ff);
+  --blue-cooler:               light-dark(#0000b0, #00bcff);
+  --blue-faint:                light-dark(#003497, #82b0ec);
+  --blue-intense:              light-dark(#0000ff, #338fff);
+  --magenta:                   light-dark(#721045, #feacd0);
+  --magenta-warmer:            light-dark(#8f0075, #f78fe7);
+  --magenta-cooler:            light-dark(#531ab6, #b6a0ff);
+  --magenta-faint:             light-dark(#7c318f, #caa6df);
+  --magenta-intense:           light-dark(#dd22dd, #ff66ff);
+  --cyan:                      light-dark(#00598b, #00d3d0);
+  --cyan-warmer:               light-dark(#32548f, #4ae2f0);
+  --cyan-cooler:               light-dark(#005f5f, #6ae4b9);
+  --cyan-faint:                light-dark(#304463, #9ac8e0);
+  --cyan-intense:              light-dark(#008899, #00eff0);
+
+  --rust:                      light-dark(#8a290f, #db8b3f);
+  --gold:                      light-dark(#6c501c, #c0965b);
+  --olive:                     light-dark(#425d00, #9cbd6f);
+  --slate:                     light-dark(#2f3f83, #76afbf);
+  --indigo:                    light-dark(#4a3a8a, #9099d9);
+  --maroon:                    light-dark(#731c52, #cf7fa7);
+  --pink:                      light-dark(#7b453c, #d09dc0);
+
+  --bg-red-intense:            light-dark(#ff8f88, #9d1f1f);
+  --bg-green-intense:          light-dark(#8adf80, #2f822f);
+  --bg-yellow-intense:         light-dark(#f3d000, #7a6100);
+  --bg-blue-intense:           light-dark(#bfc9ff, #1640b0);
+  --bg-magenta-intense:        light-dark(#dfa0f0, #7030af);
+  --bg-cyan-intense:           light-dark(#a4d5f9, #2266ae);
+  --bg-red-subtle:             light-dark(#ffcfbf, #620f2a);
+  --bg-green-subtle:           light-dark(#b3fabf, #00422a);
+  --bg-yellow-subtle:          light-dark(#fff576, #4a4000);
+  --bg-blue-subtle:            light-dark(#ccdfff, #242679);
+  --bg-magenta-subtle:         light-dark(#ffddff, #552f5f);
+  --bg-cyan-subtle:            light-dark(#bfefff, #004065);
+  --bg-red-nuanced:            light-dark(#ffe8e8, #3a0c14);
+  --bg-green-nuanced:          light-dark(#e0f6e0, #092f1f);
+  --bg-yellow-nuanced:         light-dark(#f8f0d0, #381d0f);
+  --bg-blue-nuanced:           light-dark(#ecedff, #12154a);
+  --bg-magenta-nuanced:        light-dark(#f8e6f5, #2f0c3f);
+  --bg-cyan-nuanced:           light-dark(#e0f2fa, #042837);
+
+  /* these bgs are `subtle` */
+  --bg-clay:                   light-dark(#f1c8b5, #49191a);
+  --fg-clay:                   light-dark(#63192a, #f1b090);
+  --bg-ochre:                  light-dark(#f0e3c0, #462f20);
+  --fg-ochre:                  light-dark(#573a30, #e0d09c);
+  --bg-lavender:               light-dark(#dfcdfa, #38325c);
+  --fg-lavender:               light-dark(#443379, #dfc0f0);
+  --bg-sage:                   light-dark(#c0e7d4, #143e32);
+  --fg-sage:                   light-dark(#124b41, #83d7ac);
+
+  --bg-completion:             light-dark(#f0c1cf, #483d8a);
+  --bg-hover:                  light-dark(#b2e4dc, #45605e);
+  --bg-hover-secondary:        light-dark(#dfe09f, #64404f);
+  --bg-hl-line:                light-dark(#f1d5d0, #303a6f);
+  --bg-region:                 light-dark(#c2bcb5, #555a66);
+  --fg-region:                 light-dark(#000000, #ffffff);
+
+  --bg-added:                  light-dark(#c3ebc1, #003a2f);
+  --fg-added:                  light-dark(#005000, #a0e0a0);
+  --fg-added-intense:          light-dark(#006700, #80e080);
+  --bg-changed:                light-dark(#ffdfa9, #363300);
+  --fg-changed:                light-dark(#553d00, #efef80);
+  --fg-changed-intense:        light-dark(#655000, #c0b05f);
+  --bg-removed:                light-dark(#f4d0cf, #4f1127);
+  --fg-removed:                light-dark(#8f1313, #ffbfbf);
+  --fg-removed-intense:        light-dark(#aa2222, #ff9095);
+
+  --cursor:                    light-dark(var(--red-intense), var(--magenta-intense));
+  --keybind:                   light-dark(var(--red), var(--magenta-cooler));
+
+  --err:                       var(--red);
+  --warning:                   var(--yellow);
+  --info:                      light-dark(var(--green), var(--green-cooler));
+  --bg-prominent-err:          var(--bg-red-intense);
+  --bg-prominent-warning:      var(--bg-yellow-intense);
+  --bg-prominent-note:         var(--bg-cyan-intense);
+
+  --builtin:                   var(--magenta);
+  --comment:                   var(--red-faint);
+  --constant:                  var(--magenta-cooler);
+  --docstring:                 var(--cyan-faint);
+  --fnname:                    light-dark(var(--yellow-cooler), var(--magenta-warmer));
+  --keyword:                   light-dark(var(--blue), var(--blue-warmer));
+  --preprocessor:              light-dark(var(--yellow-warmer), var(--red-cooler));
+  --property:                  light-dark(var(--green-cooler), var(--cyan-warmer));
+  --rx-backslash:              var(--magenta-warmer);
+  --rx-construct:              var(--magenta-cooler);
+  --string:                    light-dark(var(--cyan), var(--blue));
+  --type:                      light-dark(var(--green-warmer), var(--green-cooler));
+  --variable:                  light-dark(var(--green-cooler), var(--cyan-warmer));
+  --variable-use:              light-dark(var(--green-faint), var(--slate));
+
+  --fg-completion-match-0:     light-dark(var(--blue), var(--blue-cooler));
+
+  --fg-link:                   var(--blue-warmer);
+  --fg-link-symbolic:          var(--cyan);
+  --fg-link-visited:           var(--magenta);
+
+  --fg-prompt:                 light-dark(var(--green-cooler), var(--cyan-warmer));
+
+  --prose-table:               var(--fg-alt);
+
+  --rainbow-0:                 var(--fg-main);
+  --rainbow-1:                 var(--magenta-intense);
+  --rainbow-2:                 var(--cyan-intense);
+  --rainbow-3:                 var(--red-warmer);
+  --rainbow-4:                 var(--yellow-intense);
+  --rainbow-5:                 var(--magenta-cooler);
+  --rainbow-6:                 var(--green-intense);
+  --rainbow-7:                 var(--blue-warmer);
+  --rainbow-8:                 var(--magenta-warmer);
+
+  --fg-heading-0:              var(--cyan-cooler);
+  --fg-heading-1:              var(--fg-main);
+  --fg-heading-2:              var(--yellow-faint);
+  --fg-heading-3:              light-dark(var(--fg-alt), var(--blue-faint));
+  --fg-heading-4:              var(--magenta);
+  --fg-heading-5:              var(--green-faint);
+  --fg-heading-6:              var(--red-faint);
+  --fg-heading-7:              var(--cyan-faint);
+  --fg-heading-8:              var(--fg-dim);
+
+  /*
+  common:   https://github.com/protesilaos/modus-themes/blob/main/modus-themes.el#L650
+  */
+
+  --fg-button-active:          var(--fg-main);
+  --fg-button-inactive:        var(--fg-dim);
+  --bg-button-active:          var(--bg-active);
+  --bg-button-inactive:        var(--bg-dim);
+
+  --docmarkup:                 var(--magenta-faint);
+
+  --term-black:                #000000;
+  --term-black-bright:         #595959;
+  --term-red:                  var(--red);
+  --term-red-bright:           var(--red-warmer);
+  --term-green:                var(--green);
+  --term-green-bright:         var(--green-cooler);
+  --term-yellow:               var(--yellow);
+  --term-yellow-bright:        var(--yellow-warmer);
+  --term-blue:                 var(--blue);
+  --term-blue-bright:          var(--blue-warmer);
+  --term-magenta:              var(--magenta);
+  --term-magenta-bright:       var(--magenta-cooler);
+  --term-cyan:                 var(--cyan);
+  --term-cyan-bright:          var(--cyan-cooler);
+  --term-white:                #a6a6a6;
+  --term-white-bright:         #ffffff;
+
+  color-scheme: light dark;
+  background: var(--bg-main);
+  color: var(--fg-main);
+}
+body {
+  max-width: 600px;
+  padding: 8px;
+  margin: 0 auto;
+  font-family: "noto serif", charis, serif;
+  text-wrap: pretty;
+}
+h1, h2 {
+  text-wrap: balance;
+  font-family: "noto sans", andika, sans-serif;
+}
+.h0 {
+  color: var(--fg-heading-0);
+  + h1 {
+    margin-top: -0.5em;
+  }
+}
+h1 { color: var(--fg-heading-1); }
+h2 { color: var(--fg-heading-2); }
+h3 { color: var(--fg-heading-3); }
+h4 { color: var(--fg-heading-4); }
+h5 { color: var(--fg-heading-5); }
+h6 { color: var(--fg-heading-6); }
+
+.clarity {
+  font-family: "noto sans", andika, sans-serif;
+  color: var(--fg-alt);
+}
+dt {
+  font-weight: bold;
+  text-wrap: balance;
+}
+code, pre {
+  font-family: iosevie, unifont, "unifont upper", monospace !important;
+  font-size: 1.1em;
+  background: var(--bg-dim);
+}
+.smcp {
+  font-variant-caps: small-caps;
+}
+
+li, dt, dd, .tight > * {
+  margin-block: 0.5em;
+}
+
+a         { color: var(--fg-link);          }
+a:visited { color: var(--fg-link-visited);  }
+a:hover   { color: var(--fg-link-symbolic); }
+
+::selection {
+  background: var(--bg-region);
+}
+
+del {
+  background: var(--bg-removed);
+  color: var(--fg-removed);
+  text-decoration-color: var(--fg-removed-intense);
+}
+ins {
+  background: var(--bg-added);
+  color: var(--fg-added);
+  text-decoration-color: var(--fg-added-intense);
+}
+
+small {
+  color: var(--fg-dim);
+  font-size: unset;
+}
+li::marker {
+  color: var(--fg-dim);
+}
+
+/* syntax highlighting wheee */
+.builtin      { color: var(--builtin);      }
+.comment      { color: var(--comment);      }
+.constant     { color: var(--constant);     }
+.docstring    { color: var(--docstring);    }
+.fnname       { color: var(--fnname);       }
+.keyword      { color: var(--keyword);      }
+.preprocessor { color: var(--preprocessor); }
+.property     { color: var(--property);     }
+.string       { color: var(--string);       }
+.type         { color: var(--type);         }
+.variable     { color: var(--variable);     }
+.variable-use { color: var(--variable-use); }
+.rx-backslash { color: var(--rx-backslash); }
+.rx-construct { color: var(--rx-construct); }
+.docmarkup    { color: var(--docmarkup);    }
+.rainbow0     { color: var(--rainbow-0);    }
+.rainbow1     { color: var(--rainbow-1);    }
+.rainbow2     { color: var(--rainbow-2);    }
+.rainbow3     { color: var(--rainbow-3);    }
+.rainbow4     { color: var(--rainbow-4);    }
+.rainbow5     { color: var(--rainbow-5);    }
+.rainbow6     { color: var(--rainbow-6);    }
+.rainbow7     { color: var(--rainbow-7);    }
+.rainbow8     { color: var(--rainbow-8);    }
