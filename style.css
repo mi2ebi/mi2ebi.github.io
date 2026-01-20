@@ -1,4 +1,75 @@
-/* TODO `@font-face` */
+@font-face {
+  font-family: "noto sans";
+  src: url("https://raw.githubusercontent.com/notofonts/notofonts.github.io/refs/heads/main/fonts/NotoSans/hinted/ttf/NotoSans-Regular.ttf") local("noto sans");
+  font-display: swap;
+}
+@font-face {
+  font-family: "noto sans";
+  src: url("https://raw.githubusercontent.com/notofonts/notofonts.github.io/refs/heads/main/fonts/NotoSans/hinted/ttf/NotoSans-Italic.ttf") local("noto sans");
+  font-display: swap;
+  font-style: italic;
+}
+@font-face {
+  font-family: "noto sans";
+  src: url("https://raw.githubusercontent.com/notofonts/notofonts.github.io/refs/heads/main/fonts/NotoSans/hinted/ttf/NotoSans-Bold.ttf") local("noto sans");
+  font-display: swap;
+  font-weight: 700;
+}
+@font-face {
+  font-family: "noto sans";
+  src: url("https://raw.githubusercontent.com/notofonts/notofonts.github.io/refs/heads/main/fonts/NotoSans/hinted/ttf/NotoSans-BoldItalic.ttf") local("noto sans");
+  font-display: swap;
+  font-weight: 700;
+  font-style: italic;
+}
+@font-face {
+  font-family: "noto serif";
+  src: url("https://raw.githubusercontent.com/notofonts/notofonts.github.io/refs/heads/main/fonts/NotoSerif/hinted/ttf/NotoSerif-Regular.ttf") local("noto serif");
+  font-display: swap;
+}
+@font-face {
+  font-family: "noto serif";
+  src: url("https://raw.githubusercontent.com/notofonts/notofonts.github.io/refs/heads/main/fonts/NotoSerif/hinted/ttf/NotoSerif-Italic.ttf") local("noto serif");
+  font-display: swap;
+  font-style: italic;
+}
+@font-face {
+  font-family: "noto serif";
+  src: url("https://raw.githubusercontent.com/notofonts/notofonts.github.io/refs/heads/main/fonts/NotoSerif/hinted/ttf/NotoSerif-Bold.ttf") local("noto serif");
+  font-display: swap;
+  font-weight: 700;
+}
+@font-face {
+  font-family: "noto serif";
+  src: url("https://raw.githubusercontent.com/notofonts/notofonts.github.io/refs/heads/main/fonts/NotoSerif/hinted/ttf/NotoSerif-BoldItalic.ttf") local("noto serif");
+  font-display: swap;
+  font-weight: 700;
+  font-style: italic;
+}
+@font-face {
+  font-family: "iosevie";
+  src: url("https://raw.githubusercontent.com/mi2ebi/iosevie/refs/heads/main/dist/Iosevie/TTF/Iosevie-Regular.ttf") local("iosevie");
+  font-display: swap;
+}
+@font-face {
+  font-family: "iosevie";
+  src: url("https://raw.githubusercontent.com/mi2ebi/iosevie/refs/heads/main/dist/Iosevie/TTF/Iosevie-Italic.ttf") local("iosevie");
+  font-display: swap;
+  font-style: italic;
+}
+@font-face {
+  font-family: "iosevie";
+  src: url("https://raw.githubusercontent.com/mi2ebi/iosevie/refs/heads/main/dist/Iosevie/TTF/Iosevie-Bold.ttf") local("iosevie");
+  font-display: swap;
+  font-weight: 700;
+}
+@font-face {
+  font-family: "iosevie";
+  src: url("https://raw.githubusercontent.com/mi2ebi/iosevie/refs/heads/main/dist/Iosevie/TTF/Iosevie-BoldItalic.ttf") local("iosevie");
+  font-display: swap;
+  font-weight: 700;
+  font-style: italic;
+}
 
 :root {
   /*
@@ -195,7 +266,6 @@ body {
   padding: 8px;
   margin: 0 auto;
   font-family: "noto serif", charis, serif;
-  text-wrap: pretty;
 }
 h1, h2 {
   text-wrap: balance;
