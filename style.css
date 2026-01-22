@@ -286,7 +286,7 @@ h6 { color: var(--fg-heading-6); }
 
 .clarity {
   font-family: "noto sans", andika, sans-serif;
-  color: var(--fg-alt);
+  color: var(--docmarkup);
 }
 dt {
   font-weight: bold;
@@ -332,12 +332,30 @@ li::marker {
   color: var(--fg-dim);
 }
 
+.dedent {
+  margin-left: 0;
+}
+img {
+  display: block;
+  margin: 1em auto;
+}
+@media (prefers-color-scheme: dark) {
+  .darken {
+    filter: invert(1) hue-rotate(180deg);
+  }
+}
+
+.fgmain { color: var(--fg-main); }
+
 /* syntax highlighting wheee */
 .builtin      { color: var(--builtin);      }
-.comment      { color: var(--comment);      }
+.comment {
+  color: var(--comment);
+  background: var(--bg-red-subtle);
+}
 .constant     { color: var(--constant);     }
 .docstring    { color: var(--docstring);    }
-.fnname       { color: var(--fnname);       }
+.function     { color: var(--fnname);       }
 .keyword      { color: var(--keyword);      }
 .preprocessor { color: var(--preprocessor); }
 .property     { color: var(--property);     }
