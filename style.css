@@ -335,7 +335,7 @@ li::marker {
 .dedent {
   margin-left: 0;
 }
-img {
+img, svg {
   display: block;
   margin: 1em auto;
 }
@@ -345,7 +345,8 @@ img {
   }
 }
 
-.fgmain { color: var(--fg-main); }
+    .fgmain { color: var(--fg-main) !important }
+svg .fgmain { fill:  var(--fg-main) !important; }
 
 /* syntax highlighting wheee */
 .builtin      { color: var(--builtin);      }
