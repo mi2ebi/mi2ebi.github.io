@@ -297,6 +297,10 @@ code, pre {
   font-size: 1.1em;
   background: var(--bg-dim);
 }
+pre {
+  overflow-x: auto;
+  scrollbar-gutter: stable;
+}
 .smcp {
   font-variant-caps: small-caps;
 }
@@ -345,7 +349,7 @@ img, svg {
   }
 }
 
-    .fgmain { color: var(--fg-main) !important }
+    .fgmain { color: var(--fg-main) !important; }
 svg .fgmain { fill:  var(--fg-main) !important; }
 
 /* syntax highlighting wheee */
@@ -355,12 +359,18 @@ svg .fgmain { fill:  var(--fg-main) !important; }
   background: var(--bg-red-subtle);
 }
 .constant     { color: var(--constant);     }
-.docstring    { color: var(--docstring);    }
+.docstring    {
+  color: var(--docstring);
+  background: var(--bg-cyan-subtle);
+}
 .function     { color: var(--fnname);       }
 .keyword      { color: var(--keyword);      }
 .preprocessor { color: var(--preprocessor); }
 .property     { color: var(--property);     }
-.string       { color: var(--string);       }
+.string       {
+  color: var(--string);
+  background: var(--bg-blue-subtle);
+}
 .type         { color: var(--type);         }
 .variable     { color: var(--variable);     }
 .variable-use { color: var(--variable-use); }
