@@ -356,12 +356,12 @@ svg .fgmain { fill:  var(--fg-main) !important; }
 .builtin      { color: var(--builtin);      }
 .comment {
   color: var(--comment);
-  background: var(--bg-red-subtle);
+  background: var(--bg-red-nuanced);
 }
 .constant     { color: var(--constant);     }
 .docstring    {
   color: var(--docstring);
-  background: var(--bg-cyan-subtle);
+  background: var(--bg-cyan-nuanced);
 }
 .function     { color: var(--fnname);       }
 .keyword      { color: var(--keyword);      }
@@ -369,7 +369,7 @@ svg .fgmain { fill:  var(--fg-main) !important; }
 .property     { color: var(--property);     }
 .string       {
   color: var(--string);
-  background: var(--bg-blue-subtle);
+  background: var(--bg-blue-nuanced);
 }
 .type         { color: var(--type);         }
 .variable     { color: var(--variable);     }
