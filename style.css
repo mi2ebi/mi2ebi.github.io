@@ -304,6 +304,9 @@ pre {
 .smcp {
   font-variant-caps: small-caps;
 }
+.dbold {
+  font-weight: 400;
+}
 
 li, dt, dd, .tight > * {
   margin-block: 0.5em;
@@ -312,6 +315,11 @@ li, dt, dd, .tight > * {
 a         { color: var(--fg-link);          }
 a:visited { color: var(--fg-link-visited);  }
 a:hover   { color: var(--fg-link-symbolic); }
+a#back {
+  position: fixed;
+  top: 4px;
+  left: 8px;
+}
 
 ::selection {
   background: var(--bg-region);
