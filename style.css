@@ -356,6 +356,11 @@ img, svg {
     filter: invert(1) hue-rotate(180deg);
   }
 }
+@media (width <= 700px) {
+  a#back {
+    position: absolute;
+  }
+}
 
     .fgmain { color: var(--fg-main) !important; }
 svg .fgmain { fill:  var(--fg-main) !important; }
