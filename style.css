@@ -260,16 +260,20 @@
   color-scheme: light dark;
   background: var(--bg-main);
   color: var(--fg-main);
+
+  --sans: "noto sans", "andika", sans-serif;
+  --serif: "noto serif", "charis", serif;
+  --mono: "iosevie", "unifont", "unifont upper", monospace;
 }
 body {
   max-width: 600px;
   padding: 8px;
   margin: 0 auto;
-  font-family: "noto serif", charis, serif;
+  font-family: var(--serif);
 }
 h1, h2 {
   text-wrap: balance;
-  font-family: "noto sans", andika, sans-serif;
+  font-family: var(--sans);
 }
 .h0 {
   color: var(--fg-heading-0);
@@ -285,7 +289,7 @@ h5 { color: var(--fg-heading-5); }
 h6 { color: var(--fg-heading-6); }
 
 .clarity {
-  font-family: "noto sans", andika, sans-serif;
+  font-family: var(--sans);
   color: var(--docmarkup);
 }
 dt {
@@ -293,9 +297,7 @@ dt {
   text-wrap: balance;
 }
 code, pre {
-  font-family: iosevie, unifont, "unifont upper", monospace !important;
-  font-size: 1.1em;
-  background: var(--bg-dim);
+  font-family: var(--mono);
 }
 pre {
   overflow-x: auto;
@@ -307,6 +309,11 @@ pre {
 .dbold {
   font-weight: 400;
 }
+.center {
+  text-align: center;
+}
+    .fgmain { color: var(--fg-main) !important; }
+svg .fgmain { fill:  var(--fg-main) !important; }
 
 li, dt, dd, .tight > * {
   margin-block: 0.5em;
@@ -325,6 +332,19 @@ a#back {
   background: var(--bg-region);
 }
 
+table {
+  border-collapse: collapse;
+}
+th, td {
+  padding: 0.5em 0.75em;
+  border: 1px solid var(--border);
+}
+th {
+  text-align: left;
+  border-bottom: 1px solid var(--fg-alt);
+  background: var(--bg-inactive);
+}
+
 del {
   background: var(--bg-removed);
   color: var(--fg-removed);
@@ -336,9 +356,8 @@ ins {
   text-decoration-color: var(--fg-added-intense);
 }
 
-small {
-  color: var(--fg-dim);
-  font-size: unset;
+ul li {
+  list-style-type: disc;
 }
 li::marker {
   color: var(--fg-dim);
@@ -351,6 +370,7 @@ img, svg {
   display: block;
   margin: 1em auto;
 }
+
 @media (prefers-color-scheme: dark) {
   .darken {
     filter: invert(1) hue-rotate(180deg);
@@ -361,9 +381,6 @@ img, svg {
     position: absolute;
   }
 }
-
-    .fgmain { color: var(--fg-main) !important; }
-svg .fgmain { fill:  var(--fg-main) !important; }
 
 /* syntax highlighting wheee */
 .builtin      { color: var(--builtin);      }
