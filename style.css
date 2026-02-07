@@ -341,8 +341,16 @@ th, td {
 }
 th {
   text-align: left;
-  border-bottom: 1px solid var(--fg-alt);
   background: var(--bg-inactive);
+  &[scope^=col], &:not([scope]) {
+    border-bottom: 1px solid var(--fg-alt);
+  }
+  &[scope^=row] {
+    border-right: 1px solid var(--fg-alt);
+  }
+}
+td.noborder {
+  border: none;
 }
 
 del {
