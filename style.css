@@ -391,28 +391,38 @@ img, svg {
 }
 
 /* syntax highlighting wheee */
-.builtin      { color: var(--builtin);      }
+.builtin {
+  color: var(--builtin);
+}
 .comment {
   color: var(--comment);
-  background: var(--bg-red-nuanced);
+  font-style: italic;
 }
 .constant     { color: var(--constant);     }
-.docstring    {
+.docstring {
   color: var(--docstring);
-  background: var(--bg-cyan-nuanced);
+  font-style: italic;
 }
 .function     { color: var(--fnname);       }
-.keyword      { color: var(--keyword);      }
+.keyword {
+  color: var(--keyword);
+  font-weight: bold;
+}
 .preprocessor { color: var(--preprocessor); }
 .property     { color: var(--property);     }
-.string       {
+.string {
   color: var(--string);
-  background: var(--bg-blue-nuanced);
 }
-.type         { color: var(--type);         }
+.type {
+  color: var(--type);
+  font-weight: bold;
+}
 .variable     { color: var(--variable);     }
 .variable-use { color: var(--variable-use); }
-.rx-backslash { color: var(--rx-backslash); }
+.rx-backslash {
+  color: var(--rx-backslash);
+  font-weight: bold;
+}
 .rx-construct { color: var(--rx-construct); }
 .docmarkup    { color: var(--docmarkup);    }
 .rainbow0     { color: var(--rainbow-0);    }
