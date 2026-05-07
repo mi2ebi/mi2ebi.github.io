@@ -392,7 +392,8 @@ img, svg {
 
 /* syntax highlighting wheee */
 .builtin {
-  color: var(--builtin);
+    color: var(--builtin);
+    font-weight: bold;
 }
 .comment {
   color: var(--comment);

@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>monads</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <h1 id="top">monads</h1>
+    <a href="index.html" id="back">back</a>
+    <p style="color:var(--fg-alt)"><i>
+      the programming language used here is called haskell. haskell isn't quite 100% identical to the math behind
+      the concepts, but (1) we can pretend it is and be fine, and (2) if it *were* identical to the math, haskell
+      wouldn't actually be able to do everything a computer can do! for example functions in haskell (and in
+      programming in general) might go on forever or end without producing any result, which isn't allowed for
+      functions in math. but anyway
+    </i></p>
+    <p>
+      a <b>functor</b> is kind of like a box. unlike boxes in real life, once you put a thing
+      (<code class="variable">a</code>) in a box to get a thing-in-a-box (<code class="variable">f a</code>),
+      you can do stuff to it, like turning it into a different-thing-in-a-box (<code class="variable">f b</code>),
+      without needing to take it out of the box. we call doing that <code>fmap</code>.
+    </p>
+    <pre>
+<span class="function">fmap</span> <span class="keyword">::</span> <span class="type">Functor</span> <span class="variable">f</span> <span class="keyword">=></span> (<span class="variable">a</span> -> <span class="variable">b</span>) -> <span class="variable">f a</span> -> <span class="variable">f b</span></pre>
+    <p>
+      an example functor is a box that <code class="type">Maybe</code> has something in it. it might have
+      <code class="type">Nothing</code> in it or it might have <code class="type">Just</code> a value in it. we can
+      <code>fmap</code> over it just fine:
+    </p>
+    <pre>
+fmap (1 <span class="builtin">+</span>) (<span class="type">Just</span> 5) <span class="builtin">==</span> <span class="type">Just</span> 6
+fmap (1 <span class="builtin">+</span>) <span class="type">Nothing</span> <span class="builtin">==</span> <span class="type">Nothing</span></pre>
+    <p>if you like fancy symbols you can spell <code>fmap</code> as <code class="builtin"><$></code>.</p>
+    <p>
+      what if you have multiple boxes and you want to do something to both of them such that you end up with only one
+      box? then <code>fmap</code> isn't enough: it can only do stuff to one box at a time. so we need an
+      <b>applicative functor</b>. applicative functors can apply boxed functions to boxed values. we call doing that
+      <code class="builtin"><*></code>.
+    </p>
+    <pre>
+<span class="function">(<*>)</span> <span class="keyword">::</span> <span class="variable">f</span> (<span class="variable">a</span> -> <span class="variable">b</span>) -> <span class="variable">f a</span> -> <span class="variable">f b</span></pre>
+    <p>
+      we also need a way to put stuff into a box regardless of what kind of box it is, which will be helpful later
+    </p>
+    <pre>
+<span class="function">pure</span> <span class="keyword">::</span> <span class="type">Applicative</span> <span class="variable">f</span> <span class="keyword">=></span> <span class="variable">a</span> -> <span class="variable">f a</span></pre>
+    <p>now we can do things like</p>
+    <pre>
+pure (<span class="builtin">+</span>) <span class="builtin"><*></span> <span class="type">Just</span> 2 <span class="builtin"><*></span> <span class="type">Just</span> 3 <span class="builtin">==</span> <span class="type">Just</span> 5
+pure (<span class="builtin">+</span>) <span class="builtin"><*></span> <span class="type">Just</span> 2 <span class="builtin"><*></span> <span class="type">Nothing</span> <span class="builtin">==</span> <span class="type">Nothing</span></pre>
+    <p><code>pure f <span class="builtin"><*></span> x</code> is actually equivalent to <code>f <span class="builtin"><$></span> x</code> <i style="color:var(--fg-alt)">(can you see why?)</i></p>
+    <pre>
+(<span class="builtin">+</span>) <span class="builtin"><$></span> <span class="type">Just</span> 2 <span class="builtin"><*></span> <span class="type">Just</span> 3 <span class="builtin">==</span> <span class="type">Just</span> 5</pre>
+    <p>not every functor is an applicative functor. maybe your box has a permanent unchangeable label:</p>
+    <pre>
+<span class="keyword">data</span> <span class="type">Labeled</span> <span class="variable">a</span> = <span class="type">Labeled</span> <span class="type">String</span> <span class="variable">a</span> <span class="comment">-- for example, Labeled "my box" 2</span></pre>
+    <p>this is a functor, because we can define e.g.</p>
+    <pre>
+<span class="keyword">instance</span> <span class="type">Functor Labeled</span> <span class="keyword">where</span>
+  <span class="function">fmap</span> <span class="variable">f</span> (<span class="type">Labeled</span> <span class="variable">label</span> <span class="variable">x</span>) = <span class="type">Labeled</span> <span class="variable">label</span> (<span class="variable">f</span> <span class="variable">x</span>)</pre>
+    <p>
+      but it's not an applicative functor: if you have two boxes, maybe <code class="string">"my box"</code> and
+      <code class="string">"your box"</code>, and you try to add them, what should the label of the resulting box
+      be? <code class="string">"my box"</code>? <code class="string">"your box"</code>? maybe
+      <code class="string">"our box"</code>? there isn't really an obvious way
+    </p>
+    <p>what if the stuff you want to do creates a brand new box?</p>
+    <pre>
+<span class="function">half</span> <span class="keyword">::</span> <span class="type">Int</span> -> <span class="type">Maybe Int</span>
+<span class="function">half</span> <span class="variable">x</span> = <span class="keyword">if</span> even <span class="variable">x</span> <span class="keyword">then</span> <span class="type">Just</span> (<span class="variable">x</span> <span class="builtin">`div`</span> 2) <span class="keyword">else</span> <span class="type">Nothing</span></pre>
+    <p><code>fmap</code>ping this won't go so well.</p>
+    <pre>
+half <span class="builtin"><$></span> <span class="type">Just</span> 10 <span class="builtin">==</span> <span class="type">Just</span> (<span class="type">Just</span> 5)</pre>
+    <p>a <b>monad</b> is an applicative functor that can <code>join</code> nested boxes.</p>
+    <pre>
+<span class="function">join</span> <span class="keyword">::</span> <span class="type">Monad</span> <span class="variable">m</span> <span class="keyword">=></span> <span class="variable">m</span> (<span class="variable">m a</span>) -> <span class="variable">m a</span>
+join (<span class="type">Just</span> (<span class="type">Just</span> 5)) <span class="builtin">==</span> <span class="type">Just</span> 5
+join (<span class="type">Jost</span> <span class="type">Nothing</span>) <span class="builtin">==</span> <span class="type">Nothing</span>
+join <span class="type">Nothing</span> <span class="builtin">==</span> <span class="type">Nothing</span></pre>
+    <p>we also define a shortcut for fmap-and-join, "bind":</p>
+    <pre>
+<span class="function">(>>=)</span> <span class="keyword">::</span> <span class="type">Monad</span> <span class="variable">m</span> <span class="keyword">=></span> <span class="variable">m a</span> -> (<span class="variable">a</span> -> <span class="variable">m b</span>) -> <span class="variable">m b</span></pre>
+    <p>
+      since all monads are applicative functors, we don't need a new way to put something into a monad. haskell used
+      to make you define "<code>return</code>" but it's identical to <code>pure</code> so we don't really need to
+      make it explicit. but now we can do stuff like
+    </p>
+    <pre>
+<span class="type">Just</span> 10 <span class="builtin">>>=</span> half <span class="builtin">==</span> <span class="type">Just</span> 5
+<span class="type">Just</span> 9 <span class="builtin">>>=</span> half <span class="builtin">==</span> <span class="type">Nothing</span></pre>
+    <p>and we can chain them!</p>
+    <pre>
+<span class="type">Just</span> 20
+  <span class="builtin">>>=</span> half <span class="comment">-- Just 10</span>
+  <span class="builtin">>>=</span> half <span class="comment">-- Just 5</span>
+  <span class="builtin">>>=</span> half <span class="builtin">==</span> <span class="type">Nothing</span></pre>
+    <p>
+      writing <code class="builtin">>>=</code> a lot can be annoying. so haskell gives us special syntax to make
+      long bind chains look more 'normal'. for example this does the exact same thing:
+    </p>
+    <pre>
+<span class="function">divideby8</span> <span class="keyword">::</span> <span class="type">Int</span> -> <span class="type">Maybe Int</span>
+<span class="function">divideby8</span> <span class="variable">x</span> = <span class="keyword">do</span>
+  <span class="variable">y</span> &lt;- half <span class="variable">x</span>
+  <span class="variable">z</span> &lt;- half <span class="variable">y</span>
+  half <span class="variable">z</span>
+divideby8 20 <span class="builtin">==</span> <span class="type">Nothing</span></pre>
+  </body>
+</html>
