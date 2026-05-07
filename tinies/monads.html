@@ -77,7 +77,7 @@ half <span class="builtin"><$></span> <span class="type">Just</span> 10 <span cl
     <pre>
 <span class="function">join</span> <span class="keyword">::</span> <span class="type">Monad</span> <span class="variable">m</span> <span class="keyword">=></span> <span class="variable">m</span> (<span class="variable">m a</span>) -> <span class="variable">m a</span>
 join (<span class="type">Just</span> (<span class="type">Just</span> 5)) <span class="builtin">==</span> <span class="type">Just</span> 5
-join (<span class="type">Jost</span> <span class="type">Nothing</span>) <span class="builtin">==</span> <span class="type">Nothing</span>
+join (<span class="type">Just</span> <span class="type">Nothing</span>) <span class="builtin">==</span> <span class="type">Nothing</span>
 join <span class="type">Nothing</span> <span class="builtin">==</span> <span class="type">Nothing</span></pre>
     <p>we also define a shortcut for fmap-and-join, "bind":</p>
     <pre>
