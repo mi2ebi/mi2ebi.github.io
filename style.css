@@ -80,7 +80,7 @@
 
   /* aligning things is fun!
      (she says while not aligning most of the rest of her code) */
-  --bg-main:                   light-dark(#fbf7f0, #0d0e1c);
+  --bg-main:                   light-dark(#ffffff, #000000);
   --bg-dim:                    light-dark(#efe9dd, #1d2235);
   --fg-main:                   light-dark(#000000, #ffffff);
   --fg-dim:                    light-dark(#595959, #989898);
@@ -329,7 +329,7 @@ a#back {
 }
 
 ::selection {
-  background: var(--bg-region);
+  background: var(--bg-magenta-subtle);
 }
 
 table {
