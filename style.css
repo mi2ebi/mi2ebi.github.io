@@ -376,7 +376,12 @@ nav a {
 }
 
 math {
-  font-size: 1.15em;
+    font-size: 1.15em;
+    &[display=block] {
+        padding: 0;
+        text-align: left;
+        margin: 4px 0 4px 40px;
+    }
 }
 
 .dedent {
