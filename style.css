@@ -371,6 +371,14 @@ li::marker {
   color: var(--fg-dim);
 }
 
+nav a {
+  text-decoration: none;
+}
+
+math {
+  font-size: 1.15em;
+}
+
 .dedent {
   margin-left: 0;
 }
