@@ -315,8 +315,11 @@ pre {
     .fgmain { color: var(--fg-main) !important; }
 svg .fgmain { fill:  var(--fg-main) !important; }
 
-li, dt, dd, .tight > * {
+li, dt, dd {
   margin-block: 0.5em;
+}
+.tight > * {
+  margin-block: 0.2em;
 }
 
 a         { color: var(--fg-link);          }
@@ -326,10 +329,6 @@ a#back {
   position: fixed;
   top: 4px;
   left: 8px;
-}
-
-::selection {
-  background: var(--bg-magenta-subtle);
 }
 
 table {
