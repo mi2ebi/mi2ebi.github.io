@@ -367,7 +367,7 @@ ul li {
   list-style-type: disc;
 }
 li::marker {
-  color: var(--fg-dim);
+  color: var(--fg-alt);
 }
 
 nav a {
