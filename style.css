@@ -376,6 +376,7 @@ nav a {
 
 math {
     font-size: 1.15em;
+    font-family: "STIX Two Math", math;
     &[display=block] {
         padding: 0;
         text-align: left;
