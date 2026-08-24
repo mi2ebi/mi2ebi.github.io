@@ -293,8 +293,12 @@ h6 { color: var(--fg-heading-6); }
   color: var(--docmarkup);
 }
 dt {
-  font-weight: bold;
   text-wrap: balance;
+}
+dt, dfn {
+  color: var(--magenta-cooler);
+  font-weight: bold;
+  font-style: normal;
 }
 code, pre {
   font-family: var(--mono);
