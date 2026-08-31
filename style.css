@@ -437,7 +437,7 @@ img, svg {
 }
 .variable     { color: var(--variable);     }
 .variable-use { color: var(--variable-use); }
-.rx-backslash {
+.rx-backslash, .escape {
   color: var(--rx-backslash);
   font-weight: bold;
 }
