@@ -352,7 +352,7 @@ th {
     border-right: 1px solid var(--fg-alt);
   }
 }
-td.noborder {
+.noborder {
   border: none;
 }
 
