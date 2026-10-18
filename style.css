@@ -100,6 +100,18 @@
   --hyoshi:       light-dark(#ece5ef, #1c151f);
   --chitsu:       light-dark(#e2dbe5, #160f18);
 
+  --tint-fuji:          color-mix(in oklab, var(--fuji) 14%, var(--bg-main));
+  --tint-wakaba:        color-mix(in oklab, var(--wakaba) 14%, var(--bg-main));
+  --tint-beni:          color-mix(in oklab, var(--beni) 14%, var(--bg-main));
+  --tint-kaki:          color-mix(in oklab, var(--kaki) 14%, var(--bg-main));
+  --tint-tokiwa:        color-mix(in oklab, var(--tokiwa) 14%, var(--bg-main));
+  --tint-botan:         color-mix(in oklab, var(--botan) 14%, var(--bg-main));
+  --tint-sora:          color-mix(in oklab, var(--sora) 14%, var(--bg-main));
+  --tint-ai-strong:       color-mix(in oklab, var(--ai) 26%, var(--bg-main));
+  --tint-wakaba-strong:   color-mix(in oklab, var(--wakaba) 26%, var(--bg-main));
+  --tint-beni-strong:     color-mix(in oklab, var(--beni) 26%, var(--bg-main));
+  --tint-yamabuki-strong: color-mix(in oklab, var(--yamabuki) 26%, var(--bg-main));
+
   --bg-main:      var(--kami);
   --bg-dim:       var(--hyoshi);
   --fg-main:      var(--sumi);
@@ -118,13 +130,13 @@
   --fg-link-symbolic: var(--tokiwa);
   --fg-link-visited:  var(--fuji);
 
-  --bg-added:           color-mix(in srgb, var(--wakaba) 10%, var(--kami));
+  --bg-added:           color-mix(in oklab, var(--wakaba) 10%, var(--kami));
   --fg-added:           var(--wakaba);
   --fg-added-intense:   var(--wakaba);
-  --bg-changed:         color-mix(in srgb, var(--ai) 12%, var(--kami));
+  --bg-changed:         color-mix(in oklab, var(--ai) 12%, var(--kami));
   --fg-changed:         var(--ai);
   --fg-changed-intense: var(--ai);
-  --bg-removed:         color-mix(in srgb, var(--beni) 10%, var(--kami));
+  --bg-removed:         color-mix(in oklab, var(--beni) 10%, var(--kami));
   --fg-removed:         var(--beni);
   --fg-removed-intense: var(--beni);
 
@@ -208,12 +220,12 @@ h1, h2 {
     margin-top: -0.5em;
   }
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 { color: var(--fg-heading); }
+h1, h2, h3, h4, h5, h6 { color: var(--fg-heading); }
+
+.yes { color: var(--wakaba); }
+.no { color: var(--beni); }
+.maybe { color: var(--yamabuki); }
+.example, .meta { color: var(--kikyo); }
 
 .clarity {
   font-family: var(--sans);
