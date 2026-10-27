@@ -306,10 +306,6 @@ ins {
   text-decoration-color: var(--fg-added-intense);
 }
 
-rt {
-  margin-bottom: 0.8ch;
-}
-
 ul > li {
   list-style-type: disc;
 }
